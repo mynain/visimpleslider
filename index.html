@@ -1,0 +1,151 @@
+<!--[if lte IE 8]>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<![endif]-->
+<!--[if gt IE 8]><!--> <!DOCTYPE html> <!--<![endif]-->
+
+<!--[if IE 7]><html class="ie ie7" xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko"><![endif]-->
+<!--[if IE 8]><html class="ie ie8" xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko"><![endif]-->
+<!--[if gt IE 8]><!--> <html lang="ko"> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<title>VI Simple Slider</title>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>	
+	<meta name="viewport" content="height=device-height,width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<meta property="og:site_name" content="VI Simple Slider">
+    <meta property="og:title" content="VI Simple Slider">
+    <meta name="description" content="VI Simple Slider 예제 및 다운로드" />
+    <meta property="og:description" content="VI Simple Slider 예제 및 다운로드">    
+    <meta property="og:url" content="http://naminsik.com//blog/labfile/plugin.viSimpleSlider/">
+    <link rel="image_src" href="http://naminsik.com//blog/labfile/plugin.viSimpleSlider/tumbnail.plugin.viSimpleSlider.jpg" />
+    <meta property="og:image" content="http://naminsik.com//blog/labfile/plugin.viSimpleSlider/tumbnail.plugin.viSimpleSlider.jpg">
+    <meta property="fb:app_id" content="195353980540001" />
+    
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/viSimpleSlider.css">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.easing.js"></script>	
+	<script type="text/javascript" src="./js/vinyli.viSimpleSlider.js"></script>
+<!--[if lt IE 9]>
+	<script src="./js/html5.js"></script>
+<![endif]-->
+<!--[if lt IE 8]>
+	<script src="./js/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>    
+	<h1>
+	    VI Simple Slider
+	</h1>
+	<div id="testDiv">
+	    <ul>
+	        <li>
+	            <img src="./img/slide01.jpg">
+	        </li>
+	        <li>
+	            <img src="./img/slide02.jpg">
+	        </li>
+	        <li data-link="#slide" data-target="_blank">
+	            <img src="./img/slide03.jpg">
+	        </li>
+	        <li>
+	            <img src="./img/slide04.jpg">
+	        </li>
+	        <li>
+	            <img src="./img/slide05.jpg">
+	        </li>
+	    </ul>
+	</div>	
+	<div class="info">        
+        <dl>
+           <dt>설명</dt>
+           <dd>터치/마우스 스와이핑 기능,  끝에서 처음으로 계속 반복으로 이어짐, 오토플레이 가능</dd>
+            <dt>사용법 예제</dt>
+            <dd>
+               <p class="html">
+                    &lt;div id=&quot;testDiv&quot;&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li data-link=&quot;클릭시 이동할 주소&quot; data-target=&quot;링크 이동 타겟&quot;&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=&quot;이미지 경로&quot;&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li data-link=&quot;/test.html&quot; data-target=&quot;_blank&quot;&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=&quot;./img/slide05.jpg&quot;&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href=&quot;#&quot; class=&quot;arrowBtn prev&quot;&gt;이전&lt;/a&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href=&quot;#&quot; class=&quot;arrowBtn next&quot;&gt;다음&lt;/a&gt;<br>
+                    &lt;/div&gt;
+               </p>
+                <p class="js">
+                  &lt;script&gt;<br>
+                   $('#testDiv').viSimpleSlider({<br />
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ease : 'easeInOutQuart',<br />
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;autoPlay : true,<br />
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;autoTime : 3000,<br />
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;speed : 400 <br />
+                 });<br>
+                  &lt;script&gt;
+                 </p>
+            </dd>
+            <dt>옵션</dt>
+            <dd>
+                <dl>
+                    <dt>ease</dt>
+                    <dd>값 : String (기본값 : 'swing')<br>슬라이드 모셔닝</dd>
+                    <dt>indicate</dt>
+                    <dd>값 : true, false (기본값 : true)<br>슬라이드 목록 노출 여부</dd>
+                    <dt>arrow</dt>
+                    <dd>
+                        값 : true, false (기본값 : true)<br>좌우 화살표 노출 여부, true로 설정한 상태에서 만들어놓은 버튼이 없으면 자동 생성, <br>직접 버튼을 만들어 사용할 경우 기능을 부여하고 싶다면, 이전 버튼은 class="arrowBtn prev" 추가, 다음 버튼은 class="arrowBtn next" 추가
+                    </dd>
+                    <dt>autoPlay</dt>
+                    <dd>값 : true, false (기본값 : false)<br>자동 슬라이드 </dd>
+                    <dt>autoTime</dt>
+                    <dd>값 : Number (기본값 : 3000)<br>얼마 간격으로 슬라이드 되는 지의 시간값, 1초 = 1000</dd>
+                    <dt>speed</dt>
+                    <dd>값 : Number (기본값 : 800)<br>슬라이드 넘어가는 속도</dd>
+                    <dt>loop</dt>
+                    <dd>값 : true, false (기본값 : true)<br>슬라이드를 끝에서 다시 처음으로 이어지게 하기</dd>
+                    <dt>desktopSwipe</dt>
+                    <dd>값 : true, false (기본값 : true)<br>데스크탑의 경우 터치 드래그해서 스와이핑을 사용할 것인지 여부</dd>
+                </dl>
+            </dd>
+            <dt>다운로드</dt>
+            <dd>
+                <a href="http://naminsik.com/blog/labfile/plugin.viSimpleSlider/plugin.viSimpleSlider_v1.3.zip">plugin.viSimpleSlider_v1.3.zip</a>
+            </dd>
+            <dt>히스토리</dt>
+            <dd>
+                <ul>
+                   <li>2017.01.31 - v1.3 : 터치 스와이핑 보강</li>
+                    <li>2017.01.25 - v1.2 : loop, desktopSwipe 옵션 추가 / PC 에서 스와이프 후 클릭되는 오류 수정</li>
+                    <li>2017.01.20 - v1.1 : ie 대응 수정</li>
+                    <li>2017.01.19 - v1.0 : 오픈</li>
+                </ul>
+            </dd>
+        </dl>
+	</div>
+	<script>
+    $('#testDiv').viSimpleSlider({
+            ease : 'easeOutQuart',
+            autoPlay : true,
+            autoTime : 6000,
+            speed : 400,
+            desktopSwipe : true
+        });    
+    </script>
+    <script>
+        /*이 아래 코드는 안넣으셔도 됩니다.*/
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-25871465-1', 'auto');
+        ga('send', 'pageview');
+        /*소스 다운로드한 통계를 얻으려고 추가한 구글 통계 코드입니다.*/
+    </script>
+    <div id="footer"><a href="http://naminsik.com">@NIS</a> </div>
+</body>
+</html>
