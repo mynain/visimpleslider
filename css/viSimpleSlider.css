@@ -60,6 +60,12 @@ div.info > dl dd p.js {
   padding: 10px;
 }
 
+div.info > dl dd p.js2 {
+  color: #fff;
+  background-color: #666;
+  padding: 10px;
+}
+
 div.info > dl dd > dl > dt {
   font-size: 16px;
   margin-top: 20px;

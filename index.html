@@ -9,22 +9,22 @@
 <head>
 	<meta charset="UTF-8">
 	<title>VI Simple Slider</title>
-	<meta http-equiv='X-UA-Compatible' content='IE=edge'>	
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
 	<meta name="viewport" content="height=device-height,width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 	<meta property="og:site_name" content="VI Simple Slider">
     <meta property="og:title" content="VI Simple Slider">
     <meta name="description" content="VI Simple Slider 예제 및 다운로드" />
-    <meta property="og:description" content="VI Simple Slider 예제 및 다운로드">    
+    <meta property="og:description" content="VI Simple Slider 예제 및 다운로드">
     <meta property="og:url" content="http://naminsik.com//blog/labfile/plugin.viSimpleSlider/">
     <link rel="image_src" href="http://naminsik.com//blog/labfile/plugin.viSimpleSlider/tumbnail.plugin.viSimpleSlider.jpg" />
     <meta property="og:image" content="http://naminsik.com//blog/labfile/plugin.viSimpleSlider/tumbnail.plugin.viSimpleSlider.jpg">
     <meta property="fb:app_id" content="195353980540001" />
-    
+
 	<link rel="stylesheet" href="./css/reset.css">
 	<link rel="stylesheet" href="./css/viSimpleSlider.css">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="./js/jquery.easing.js"></script>	
+	<script type="text/javascript" src="./js/jquery.easing.js"></script>
 	<script type="text/javascript" src="./js/vinyli.viSimpleSlider.js"></script>
 <!--[if lt IE 9]>
 	<script src="./js/html5.js"></script>
@@ -34,7 +34,7 @@
 <![endif]-->
 
 </head>
-<body>    
+<body>
 	<h1>
 	    VI Simple Slider
 	</h1>
@@ -56,8 +56,8 @@
 	            <img src="./img/slide05.jpg">
 	        </li>
 	    </ul>
-	</div>	
-	<div class="info">        
+	</div>
+	<div class="info">
         <dl>
            <dt>설명</dt>
            <dd>터치/마우스 스와이핑 기능,  끝에서 처음으로 계속 반복으로 이어짐, 오토플레이 가능</dd>
@@ -87,6 +87,12 @@
                  });<br>
                   &lt;script&gt;
                  </p>
+		     <p class="js2">
+                   &lt;script&gt;<br>
+			 //다중 슬라이드로 구현할 경우 인터벌 충돌이 될 수 있으므로 클리어 인터벌 액션을 아래처럼 활용해주세요.<br>
+                    $('#testDiv').viClear();<br>
+                   &lt;script&gt;
+                  </p>
             </dd>
             <dt>옵션</dt>
             <dd>
@@ -107,8 +113,10 @@
                     <dd>값 : Number (기본값 : 800)<br>슬라이드 넘어가는 속도</dd>
                     <dt>loop</dt>
                     <dd>값 : true, false (기본값 : true)<br>슬라이드를 끝에서 다시 처음으로 이어지게 하기</dd>
+			  <dt>mobileSwipe</dt>
+                    <dd>값 : true, false (기본값 : true)<br>모바일의 경우 터치 드래그로 스와이핑을 사용할 것인지 여부(터치 기능이 있어야 유효함)</dd>
                     <dt>desktopSwipe</dt>
-                    <dd>값 : true, false (기본값 : true)<br>데스크탑의 경우 터치 드래그해서 스와이핑을 사용할 것인지 여부</dd>
+                    <dd>값 : true, false (기본값 : true)<br>데스크탑의 경우 드래그해서 스와이핑을 사용할 것인지 여부</dd>
                 </dl>
             </dd>
             <dt>다운로드</dt>
@@ -118,6 +126,7 @@
             <dt>히스토리</dt>
             <dd>
                 <ul>
+			    <li>2017.10.30 - v2.0 : 모바일 스와이핑과 PC 스와이핑 분리 옵션, 다중 사용을 위한 인터벌 액션 추가</li>
                    <li>2017.01.31 - v1.3 : 터치 스와이핑 보강</li>
                     <li>2017.01.25 - v1.2 : loop, desktopSwipe 옵션 추가 / PC 에서 스와이프 후 클릭되는 오류 수정</li>
                     <li>2017.01.20 - v1.1 : ie 대응 수정</li>
@@ -132,8 +141,9 @@
             autoPlay : true,
             autoTime : 6000,
             speed : 400,
-            desktopSwipe : true
-        });    
+		mobileSwipe : true,
+            desktopSwipe : false
+        });
     </script>
     <script>
         /*이 아래 코드는 안넣으셔도 됩니다.*/
